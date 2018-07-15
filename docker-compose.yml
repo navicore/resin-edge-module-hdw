@@ -1,0 +1,24 @@
+version: '2'
+services:
+  mqtt-broker:
+    build: ./mqtt-broker
+    expose:
+      - "1883"
+      - "9001"
+    privileged: true
+    restart: always
+    network_mode: host
+  mqtt-bridge:
+    build: ./mqtt-bridge
+    privileged: true
+    depends_on:
+      - mqtt-broker
+    restart: always
+    network_mode: host
+  akka-dht22:
+    build: ./akka-dht22
+    privileged: true
+    depends_on:
+      - mqtt-broker
+    restart: always
+    network_mode: host
