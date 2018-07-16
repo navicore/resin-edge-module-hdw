@@ -21,7 +21,7 @@ RUN apt-get -q update \
 
 RUN git clone https://github.com/navicore/dht22-temp-monitor-for-pi.git dht22 && cd dht22 && sbt javah assembly
 
-RUN git clone https://github.com/navicore/akka-dht22.git akka-dht22 && cd akka-dht22 && git checkout tags/0.9.1 && mkdir -p lib && cp /dht22/target/scala-2.12/*.jar lib/ && sbt assembly
+RUN git clone https://github.com/navicore/akka-dht22.git akka-dht22 && cd akka-dht22 && git checkout tags/0.9.2 && mkdir -p lib && cp /dht22/target/scala-2.12/*.jar lib/ && sbt assembly
 
 RUN mkdir -p /app
 
