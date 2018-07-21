@@ -1,5 +1,6 @@
 #FROM resin/%%RESIN_MACHINE_NAME%%-openjdk AS buildstep
-FROM resin/armv7hf-openjdk AS buildstep
+#FROM resin/armv7hf-openjdk AS buildstep
+FROM resin/armv7l-openjdk AS buildstep
 
 ENV INITSYSTEM on
 
